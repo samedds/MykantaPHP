@@ -2,7 +2,7 @@
 include "../include/sessionfile.php";
 include "../include/conxn.php";
 // API access key from Google API's Console
-define( 'API_ACCESS_KEY', 'AIzaSyC6zLNKFVDJt5QKLgR_ErJjC3QJUJ-YdYM' );
+define( 'API_ACCESS_KEY', ' ' );
 //new post ------/
 //smile  --------/
 //repost --------/
