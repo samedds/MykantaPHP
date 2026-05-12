@@ -7,7 +7,7 @@
 			'data' => $message
 			);
   $headers = array(
-			'Authorization.key = AIzaSyCmaoV_NjbeXJNtddMb17kAwRpHJI_mJ9Y',
+			'Authorization.key =  ',
 			'Content-Type: application/json'
 			);
 			
