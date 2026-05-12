@@ -1,4 +1,4 @@
-# 🛒 HIPI Marketplace / MyKanta System
+#  MyKanta Socio-Ecommerce
 
 A full-stack PHP + Bootstrap marketplace and social commerce platform that connects users, shops, and products in a unified ecosystem.
 
