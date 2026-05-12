@@ -1,0 +1,239 @@
+#RewriteEngine On
+#RewriteCond %{HTTPS} !=on
+#RewriteRule .* https://mykanta.com/%{REQUEST_URI} [R,L]
+
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^www\.mykanta\.com [NC]
+#RewriteRule (.*) https://mykanta.com/$1 [R=301,L]
+
+RewriteOptions Inherit
+
+# secure htaccess file
+<Files .htaccess>
+Order Deny,Allow
+    Allow from all
+</Files>
+
+# enable symbolic links
+Options +FollowSymLinks
+
+# Disable directory browsing 
+Options -Indexes
+
+<Files .php>
+Order Deny,Allow
+    Allow from all
+</Files>
+
+
+ErrorDocument 404 /error_page_404.php
+RewriteEngine on
+RewriteBase /
+ 
+RedirectMatch  ^/edit_business/((css|js|img)/.*) /$1
+RewriteRule ^edit_business/(.*)/?$ editbuspage.php?shopName=$1 [L,NC]
+
+RedirectMatch ^/message/((css|js|img)/.*) /$1
+RewriteRule ^message/?$ message.php [L,NC]
+
+RedirectMatch ^/tags/((css|js|img)/.*) /$1
+RewriteRule ^tags/?$ tags.php [L,NC]
+
+RedirectMatch ^/myshops/((css|js|img)/.*) /$1
+RewriteRule ^myshops/?$ myshops.php [L,NC]
+
+RedirectMatch ^/subscriptions/((css|js|img)/.*) /$1
+RewriteRule ^subscriptions/?$ subscriptions.php [L,NC]
+
+RedirectMatch ^/connections/((css|js|img)/.*) /$1
+RewriteRule ^connections/?$ view_all_cons.php [L,NC]
+
+RedirectMatch ^/create_business/((css|js|img)/.*) /$1
+RewriteRule ^create_business/?$ create_business.php [L,NC]
+
+RedirectMatch ^/invite-bus/((css|js|img)/.*) /$1
+RewriteRule ^invite-bus/?$ invite_bus.php [L,NC]
+
+RedirectMatch ^/categories/((css|js|img)/.*) /$1
+RewriteRule ^categories/?$ categories.php [L,NC]
+
+RedirectMatch ^/cart/((css|js|img)/.*) /$1
+RewriteRule ^cart/?$ check_out.php [L,NC]
+
+RedirectMatch ^/user-settings/((css|js|img)/.*) /$1
+RewriteRule ^user-settings/?$ user_settings.php [L,NC]
+
+RedirectMatch ^/login-auth/((css|js|img)/.*) /$1
+RewriteRule ^login-auth/?$ login.php [L,NC]
+
+RedirectMatch ^/home/((css|js|img)/.*) /$1
+RewriteRule ^home/?$ index.php [L,NC]
+
+#RedirectMatch ^/community/((css|js|img)/.*) /$1
+#RewriteRule ^community/?$ community.php [L,NC]
+
+RedirectMatch ^/signin/((css|js|img)/.*) /$1
+RewriteRule ^signin/?$ index_login.php [L,NC]
+
+RedirectMatch  ^/hashtags/((css|js|img)/.*) /$1
+RewriteRule ^hashtags/(.*)/?$ hashtag.php?tag_id=$1 [L,NC]
+
+RedirectMatch  ^/hashtags_o/((css|js|img)/.*) /$1
+RewriteRule ^hashtags_o(.*)/?$ hashtag_o.php?tag_id=$1 [L,NC]
+
+RedirectMatch  ^/account/((css|js|img)/.*) /$1
+RewriteRule ^account/(.*)/?$ accountvispage.php?username=$1 [L,NC]
+
+
+RedirectMatch  ^/reev/((css|js|img)/.*) /$1
+RewriteRule ^reev/(.*)/?$ profile.php?reev_id=$1 [L,NC]
+
+RedirectMatch  ^/reev_load/((css|js|img)/.*) /$1
+RewriteRule ^reev_load/(.*)/?$ accountvispage.php?reev_id=$1 [L,NC]
+
+RedirectMatch  ^/reev_view/((css|js|img)/.*) /$1/$2
+RewriteRule ^reev_view/(.*)/(.*)/?$ accountfriendpage.php?username=$1&reev_id=$2 [L,NC]
+
+RedirectMatch  ^/home/((css|js|img)/.*) /$1/$2
+RewriteRule ^home/(.*)/(.*)/?$ home?ref=$1&email=$2 [L,NC]
+
+RedirectMatch permanent ^/registration/((css|js|img)/.*) /$1
+RewriteRule ^registration/?$ index_reg_mb.php [L,NC]
+
+RedirectMatch permanent ^/about-us/((css|js|img)/.*) /$1
+RewriteRule ^about-us/?$ about_us.php [L,NC]
+
+RedirectMatch permanent ^/who_we_are/((css|js|img)/.*) /$1
+RewriteRule ^who_we_are/?$ who_we_are.php [L,NC]
+
+RedirectMatch permanent ^/contact-us/((css|js|img)/.*) /$1
+RewriteRule ^contact-us/?$ contact_us.php [L,NC]
+
+RedirectMatch permanent ^/news_press/((css|js|img)/.*) /$1
+RewriteRule ^news_press/?$ news_press.php [L,NC]
+
+RedirectMatch permanent ^/frequently-asked-questions-and-answers/((css|js|img)/.*) /$1
+RewriteRule ^frequently-asked-questions-and-answers/?$ frequently_aq.php [L,NC]
+
+RedirectMatch permanent ^/support/((css|js|img)/.*) /$1
+RewriteRule ^support/?$ support.php [L,NC]
+
+
+RedirectMatch permanent ^/create_business/((css|js|img)/.*) /$1
+RewriteRule ^create_business/?$ create_business.php [L,NC]
+
+
+RedirectMatch permanent ^/blog/getting-started-on-mykanta/((css|js|img)/.*) /$1
+RewriteRule ^blog/getting-started-on-mykanta/?$ blog_getting_started.php [L,NC]
+
+RedirectMatch permanent ^/blog/gif-social-media-platform-released-in-Ghana/((css|js|img)/.*) /$1
+RewriteRule ^blog/gif-social-media-platform-released-in-Ghana/?$ blog_we_start_with_grace.php [L,NC]
+
+RedirectMatch ^/blog/mykanta-on-google-playstore/((css|js|img)/.*) /$1
+RewriteRule ^blog/mykanta-on-google-playstore/?$ blog_mykanta_on_playstore.php [L,NC]
+
+
+RedirectMatch ^/blog/e-commerce-and-ghana/((css|js|img)/.*) /$1
+RewriteRule ^blog/e-commerce-and-ghana/?$ blog_ecommerceghana.php [L,NC]
+
+RedirectMatch permanent ^/safe-trading-guide-on-ecommerce/((css|js|img)/.*) /$1
+RewriteRule ^safe-trading-guide-on-ecommerce/?$ safe_tr_guide.php [L,NC]
+
+RedirectMatch permanent ^/TermandConditions/((css|js|img)/.*) /$1
+RewriteRule ^TermandConditions/?$ TermandConditions.php [L,NC]
+
+RedirectMatch permanent ^/intellectual_property_rights/((css|js|img)/.*) /$1
+RewriteRule ^intellectual_property_rights/?$ ipr.php [L,NC]
+
+RedirectMatch permanent ^/privacy-policy/((css|js|img)/.*) /$1
+RewriteRule ^privacy-policy/?$ data_policy.php [L,NC]
+
+RedirectMatch permanent ^/sitemap/((css|js|img)/.*) /$1
+RewriteRule ^sitemap/?$ sitemap.php [L,NC]
+
+RedirectMatch ^/Logout/((css|js|img)/.*) /$1
+RewriteRule ^Logout/?$ logout.php [L,NC]
+
+RedirectMatch permanent ^/business/((css|js|img)/.*) /$1
+RewriteRule ^business/(.*)/?$ shop_vis.php?shopName=$1 [L,NC]
+
+RedirectMatch permanent ^/product/((css|js|img)/.*) /$1/$2/$3
+RewriteRule ^product/(.*)/(.*)/(.*)/?$ product_vis.php?shopname=$1&product_id=$2&prdt_name=$3 [L,NC]
+
+RedirectMatch permanent ^/hide_product/((css|js|img)/.*) /$1/$2/$3
+RewriteRule ^hide_product/(.*)/(.*)/(.*)/?$ ajax/delete_product.php?shopName=$1&product_id=$2&prdt_name=$3 [L,NC]
+
+RedirectMatch permanent ^/settings/((css|js|img)/.*) /$1
+RewriteRule ^settings/?$ user_settings.php [L,NC]
+
+RedirectMatch permanent ^/User/((css|js|img)/.*) /$1
+RewriteRule ^User/?$ profile.php [L,NC]
+
+RedirectMatch  ^/connection/((css|js|img)/.*) /$1
+RewriteRule ^connection/(.*)/?$ accountfriendpage.php?username=$1 [L,NC]
+
+RedirectMatch  ^/business_category/((css|js|img)/.*) /$1
+RewriteRule ^business-category/(.*)/?$ category.php?cat_id=$1 [L,NC]
+
+RedirectMatch  ^/product_category/((css|js|img)/.*) /$1
+RewriteRule ^product-category/(.*)/?$ catlog.php?cat_id=$1 [L,NC]
+
+RedirectMatch  ^/connection-req/((css|js|img)/.*) /$1
+RewriteRule ^connection-req/(.*)/?$ accountnyfriendpage.php?username=$1 [L,NC]
+
+RedirectMatch  ^/connection-auth/((css|js|img)/.*) /$1
+RewriteRule ^connection-auth/(.*)/?$ fp.php?username=$1 [L,NC]
+
+RedirectMatch  ^/user/my-business/((css|js|img)/.*) /$1
+RewriteRule ^user/my-business/(.*)/?$ shopaccount.php?shopName=$1 [L,NC]
+
+RedirectMatch  ^/user/my_business/((css|js|img)/.*) /$1
+RewriteRule ^user/my_business/(.*)/?$ shopaccount.php?shopName=$1 [L,NC]
+
+RedirectMatch  ^/business-link/((css|js|img)/.*) /$1
+RewriteRule ^business-link/(.*)/?$ shopprocess.php?shopName=$1 [L,NC]
+
+RedirectMatch  ^/my-products/((css|js|img)/.*) /$1/$2/$3
+RewriteRule ^my-products/(.*)/(.*)/(.*)/?$ shopaccountproduct.php?shopName=$1&product_id=$2&prdt_name=$3 [L,NC]
+
+RedirectMatch  ^/product-link/((css|js|img)/.*) /$1/$2/$3
+RewriteRule ^product-link/(.*)/(.*)/(.*)/?$ productprocess.php?shopName=$1&product_id=$2&prdt_name=$3 [L,NC]
+
+RedirectMatch  ^/product_link/((css|js|img)/.*) /$1/$2/$3
+RewriteRule ^product_link/(.*)/(.*)/(.*)/?$ productprocess.php?shopName=$1&product_id=$2&prdt_name=$3 [L,NC]
+
+RedirectMatch  ^/products/((css|js|img)/.*) /$1/$2/$3
+RewriteRule ^products/(.*)/(.*)/(.*)/?$ shopaccountotherproduct.php?shopName=$1&product_id=$2&prdt_name=$3 [L,NC]
+
+RedirectMatch permanent ^/subsbribed-business/((css|js|img)/.*) /$1
+RewriteRule ^subsbribed-business/(.*)/?$ shopaccountother.php?shopName=$1 [L,NC]
+
+RedirectMatch permanent ^/business_link2/((css|js|img)/.*) /$1
+RewriteRule ^business-link2/(.*)/?$ shopaccountother.php?shopName=$1 [L,NC]
+
+RedirectMatch ^/user/add-product/((css|js|img)/.*) /$1
+RewriteRule ^user/add-product/(.*)/?$ addproductpage.php?shopName=$1 [L,NC]
+
+RedirectMatch  ^/edit-product/((css|js|img)/.*) /$1/$2/$3
+RewriteRule ^edit-product/(.*)/(.*)/(.*)/?$ editproductpage.php?shopName=$1&product_id=$2&prdt_nameformat=$3 [L,NC]
+
+RedirectMatch ^/user/add-service/((css|js|img)/.*) /$1
+RewriteRule ^user/add-service/(.*)/?$ addservicepage.php?shopName=$1 [L,NC]
+
+RedirectMatch permanent ^/feedback/((css|js|img)/.*) /$1
+RewriteRule ^feedback/?$ send_feedback.php [L,NC]
+
+RedirectMatch ^/feedback/((css|js|img)/.*) /$1
+RewriteRule ^feedback/(.*)/?$ send_feedback.php?feed=$1 [L,NC]
+
+RedirectMatch  ^/edit-service/((css|js|img)/.*) /$1/$2/$3
+RewriteRule ^edit-service/(.*)/(.*)/(.*)/?$ editservicepage.php?shopName=$1&product_id=$2&prdt_nameformat=$3 [L,NC]
+
+#Force www:
+#RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP_HOST} !^$
+#RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+#RewriteCond %{HTTP_HOST} ^www\.mykanta\.com [NC]
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#RewriteRule ^(.*)$ https://www.mykanta.com/$1 [L,R=301,NC]
