@@ -1,11 +1,11 @@
  declare let FCMPlugin;
    var config = {
-         apiKey: "AIzaSyAMWuHaa9JUt2m0vcRmyCWQiNOfsuDnxII",
-    authDomain: "mykanta-d688b.firebaseapp.com",
-    databaseURL: "https://mykanta-d688b.firebaseio.com",
-    projectId: "mykanta-d688b",
-    storageBucket: "mykanta-d688b.appspot.com",
-    messagingSenderId: "935489991997"
+         apiKey: "AIzaS ",
+    authDomain: "myk om",
+    databaseURL: " ",
+    projectId: "my 88b",
+    storageBucket: "mykanv.com",
+    messagingSenderId: " "
     };
   firebase.initializeApp(config);
   
